@@ -1,22 +1,27 @@
-######################################################################
-## NOTE: THIS FILE SHOULD BE REPLACED BY RUNNING ./script/bootstrap ##
-######################################################################
-
 [tool.poetry]
-name = "python-template"
-version = "1.0.2"
+authors = ["zb3qk <zb3qk@virginia.edu>"]
 description = ""
-authors = ["Armand Sauzay <sauzayarmand@gmail.com>"]
+name = "hello-world-python-cli"
 readme = "README.md"
-packages = [{include = "python_template"}]
+version = "0.1.0"
 
 [tool.poetry.dependencies]
 python = "^3.10"
 
-
 [tool.poetry.group.test.dependencies]
-pytest = "^7.3.1"
+pytest = "^7.4.4"
+
+[tool.poetry.group.lint.dependencies]
+black = "^23.12.1"
+flake8 = "^7.0.0"
+isort = "^5.13.2"
+mypy = "^1.8.0"
 
 [build-system]
-requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core"]
+
+[tool.pytest.ini_options]
+python_files = ["test_*.py"]
+python_functions = ["test_", "it_", "and_", "but_", "they_"]
+testpaths = ["tests"]

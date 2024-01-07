@@ -1,1 +1,1 @@
-python -m script.bootstrap
+python3 -m script.bootstrap

@@ -64,7 +64,7 @@ def check_install(tool, installation_method):
     except OSError:
         if installation_method == "pip":
             subprocess.check_call(
-                [sys.executable, "-m", "pip", "install", tool],
+                ["pip", "install", tool],
                 stdout=subprocess.DEVNULL,
             )
         elif installation_method == "brew":
@@ -117,7 +117,7 @@ def main():
     """Main function"""
     clean_repository()
     check_install("poetry", "pip")
-    check_install("pre-commit", "brew")
+    check_install("pre-commit", "pip")
     create_new_poetry_project()
 
 
